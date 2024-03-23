@@ -5,4 +5,4 @@
 function createTweetId(){
     global $id_number;
     return $id_number++;
-};
+}

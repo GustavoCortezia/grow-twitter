@@ -25,27 +25,20 @@ class Tweet {
         return $this->id;
     }
 
-    // function getContent(){
-    //     return $this->content;
-    // }
-
-    // function getUser() {
-    //     return $this->user;
-    // }
-
     function show($tweetId, $tweetData){
-        for ($key=0; $key < count($tweetData); $key++) { 
-        // foreach ($tweetData as $key => $tweetId) {
+        for ($key=0; $key < 3; $key++) { 
             if($tweetId == $tweetData[$key]->id){
                 echo "@" . $tweetData[$key]->user->getUsername() . ":"
-                 . $tweetData[$key]->content . " <br><br> likes:" . $tweetData[$key]->likes;
+                . $tweetData[$key]->content . " <br><br> likes:" . $tweetData[$key]->likes . " <br><br> <hr> <br><br> ";
+                 return;
             }
         }
         echo "Tweet " . $tweetId . " não encontrado.";
     }
+    
 
     static function list($tweetData){
-        foreach ($tweetData as $key) {
+        for ($key=0; $key < 4; $key++) { 
             echo "@" . $tweetData[$key]->user->getUsername() . ":"
             . $tweetData[$key]->content . " <br><br> likes:" . $tweetData[$key]->likes . " <br><br> <hr> <br><br> ";
         }

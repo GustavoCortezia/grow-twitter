@@ -26,7 +26,8 @@ class User {
     }
 
     function likeTweet($tweetId, $tweetData){
-        foreach ($tweetData as $key => $tweetId) {
+        // foreach ($tweetData as $key => $tweetId) {
+            for ($key=0; $key < 3; $key++) {
             if($tweetId == $tweetData[$key]->getId()){
                 $tweetData[$key]->setLikes($tweetData[$key]->getLikes() + 1);
             }
