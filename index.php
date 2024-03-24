@@ -31,9 +31,10 @@ $usuario1->likeTweet($tweet1->getId(), $tweetData);
 
 $usuario1->likeTweet($tweet3->getId(), $tweetData);
 
-
 // $tweet1->show($tweet1->getId(), $tweetData);
 
 Tweet::list($tweetData);
+
+User:: verifyUsername($userData);
 
 

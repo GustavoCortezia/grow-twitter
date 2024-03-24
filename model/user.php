@@ -19,22 +19,28 @@ class User {
         return $this->username;
     }
 
-    public function createTweet($tweetData){
+    static function verifyUsername($userData){ 
+        for ($key=0; $key < count($userData); $key++) {
+            for ($key1=0; $key1 < count($userData); $key1++) {
+                if($userData[$key]->username == $userData[$key1]->username){
+                    echo "username  invalido!";
+                }
+            }
+        }
+    }
+
+    function createTweet($tweetData){
         var_dump($tweetData);
         array_push($tweetData, $this);
         return $tweetData;
     }
 
     function likeTweet($tweetId, $tweetData){
-        // foreach ($tweetData as $key => $tweetId) {
-            for ($key=0; $key < 3; $key++) {
+        for ($key=0; $key < count($tweetData); $key++) {
             if($tweetId == $tweetData[$key]->getId()){
                 $tweetData[$key]->setLikes($tweetData[$key]->getLikes() + 1);
             }
         }
     }
 
-    function deleteTweet($tweetId, $tweetData){}
-
-    function listTweets($tweetData){}
 }

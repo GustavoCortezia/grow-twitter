@@ -26,7 +26,7 @@ class Tweet {
     }
 
     function show($tweetId, $tweetData){
-        for ($key=0; $key < 3; $key++) { 
+        for ($key=0; $key < count($tweetData); $key++) { 
             if($tweetId == $tweetData[$key]->id){
                 echo "@" . $tweetData[$key]->user->getUsername() . ":"
                 . $tweetData[$key]->content . " <br><br> likes:" . $tweetData[$key]->likes . " <br><br> <hr> <br><br> ";
@@ -36,14 +36,11 @@ class Tweet {
         echo "Tweet " . $tweetId . " não encontrado.";
     }
     
-
     static function list($tweetData){
-        for ($key=0; $key < 4; $key++) { 
-            echo "@" . $tweetData[$key]->user->getUsername() . ":"
+        for ($key=0; $key < count($tweetData); $key++) { 
+            echo "@" . $tweetData[$key]->user->getUsername() . ": "
             . $tweetData[$key]->content . " <br><br> likes:" . $tweetData[$key]->likes . " <br><br> <hr> <br><br> ";
         }
     }
 
-
-    
 }
