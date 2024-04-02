@@ -19,15 +19,15 @@ class User {
         return $this->username;
     }
 
-    static function verifyUsername($userData){ 
-        for ($key=0; $key < count($userData); $key++) {
-            for ($key1=0; $key1 < count($userData); $key1++) {
-                if($userData[$key]->username == $userData[$key1]->username){
-                    echo "username  invalido!";
-                }
-            }
-        }
-    }
+    // static function verifyUsername($userData){ 
+    //     for ($key=0; $key < count($userData); $key++) {
+    //         for ($key1=0; $key1 < count($userData); $key1++) {
+    //             if($userData[$key]->username == $userData[$key1]->username){
+    //                 echo "username  invalido!";
+    //             }
+    //         }
+    //     }
+    // }
 
     function createTweet($tweetData){
         var_dump($tweetData);
